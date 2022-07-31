@@ -15,6 +15,8 @@ Also thanks to the amazing [gym-minigrid](https://github.com/Farama-Foundation/g
 
 The retro games code is based almost entirely on the [large scale study of cusiorisity driven learning repo](https://arxiv.org/abs/1808.04355) with some small changes to implement aleatoric uncertainty estimation.
 
+If you have any issues with the code please reach out! You can email me or find me on Twitter.
+
 When developing the aleatoric uncertainty quantification code, the following repos were helpful:
 
 https://github.com/ShellingFord221/My-implementation-of-What-Uncertainties-Do-We-Need-in-Bayesian-Deep-Learning-for-Computer-Vision
