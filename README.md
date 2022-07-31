@@ -46,4 +46,4 @@ https://stackoverflow.com/questions/5543651/computing-standard-deviation-in-a-st
 }
 ```
 
-# Also please cite the relevant this builds on (e.g. Large scale study of curiosity driven learning, gym minigrid, torch-ac etc.)
+Also please cite the relevant work this builds on (e.g. Large scale study of curiosity driven learning, gym minigrid, torch-ac etc.)
