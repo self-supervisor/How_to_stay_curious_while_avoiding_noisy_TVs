@@ -70,7 +70,7 @@ class ICM:
                 torch.exp(-uncertainty) * mse + self.uncertainty_budget * uncertainty
             )
             reward = mse - torch.exp(uncertainty)
-            reward = torch.clamp(reward, -1, 1)
+            reward = torch.clamp(reward, 0, 1e8)
             reward = torch.mean(reward, dim=(1, 2, 3))
         else:
             reward = F.mse_loss(forward_prediction, new_obs, reduction="none")
