@@ -171,18 +171,17 @@ class A2CAlgo(BaseAlgo):
             #self.current_frames.append(self.obs)
             #self.previous_frames.append(self.obss[i])
             if self.curiosity == "True":
-
                 mse, intrinsic_reward, uncertainty = self.icm.compute_intrinsic_rewards(
                     self.obss[i], self.obs, action
                 )
-                if self.normalise_rewards == "True":
-                    normlalised_reward = self.moving_average_reward.include_tensor(
-                        intrinsic_reward
-                    )
-                    intrinsic_reward = normlalised_reward
                 reward = intrinsic_reward + torch.tensor(reward, dtype=torch.float).to(
                     self.device
                 )
+                if self.normalise_rewards == "True":
+                    normlalised_reward = self.moving_average_reward.include_tensor(
+                        reward
+                    )
+                    reward = normlalised_reward
                 loss = torch.sum(mse)
                 self.intrinsic_reward_buffer.append(intrinsic_reward)
                 self.action_stats_logger.add_to_log_dicts(
